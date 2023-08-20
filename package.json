@@ -1,0 +1,48 @@
+{
+  "name": "@twilify/sdk",
+  "version": "0.0.0",
+  "description": "Twilify SDK.",
+  "main": "./lib/main.js",
+  "types": "./lib/main.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Twilify/sdk.git"
+  },
+  "keywords": [
+    "sdk",
+    "cdn",
+    "cms",
+    "api",
+    "rest",
+    "web",
+    "typescript"
+  ],
+  "author": "Twilify",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Twilify/sdk/issues"
+  },
+  "homepage": "https://github.com/Twilify/sdk#readme",
+  "devDependencies": {
+    "@types/node": "^20.5.1",
+    "dotenv": "^16.3.1",
+    "esbuild": "^0.19.2",
+    "typescript": "5.3.0-dev.20230820"
+  },
+  "dependencies": {
+    "ofetch": ">=1.0.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

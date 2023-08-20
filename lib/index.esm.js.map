@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/pages/index.ts", "../src/config.ts"],
+  "sourcesContent": ["import { $fetch } from 'ofetch';\r\nimport CONFIG from '../config';\r\n\r\ninterface Options {}\r\n\r\nexport const makePageEndpointUrl = (slug: string) => {\r\n  return `${CONFIG.API_URL}/pages/${slug}`;\r\n};\r\n\r\nexport const fetchPage = (slug: string, options: Options = {}) => {\r\n  const url = makePageEndpointUrl(slug);\r\n\r\n  return $fetch(url, {\r\n    method: 'GET',\r\n    query: options,\r\n  });\r\n};\r\n", "const CONFIG = {\r\n  API_URL: process.env.API_URL || 'https://api.twilify.app',\r\n  CDN_URL: process.env.CDN_URL || 'https://cdn.twilify.app',\r\n  DEBUG: process.env.DEBUG || false,\r\n};\r\n\r\nexport default CONFIG;\r\n"],
+  "mappings": "AAAA,OAAS,UAAAA,MAAc,SCAvB,IAAMC,EAAS,CACb,QAAS,QAAQ,IAAI,SAAW,0BAChC,QAAS,QAAQ,IAAI,SAAW,0BAChC,MAAO,QAAQ,IAAI,OAAS,EAC9B,EAEOC,EAAQD,EDDR,IAAME,EAAuBC,GAC3B,GAAGC,EAAO,OAAO,UAAUD,CAAI,GAG3BE,EAAY,CAACF,EAAcG,EAAmB,CAAC,IAAM,CAChE,IAAMC,EAAML,EAAoBC,CAAI,EAEpC,OAAOK,EAAOD,EAAK,CACjB,OAAQ,MACR,MAAOD,CACT,CAAC,CACH",
+  "names": ["$fetch", "CONFIG", "config_default", "makePageEndpointUrl", "slug", "config_default", "fetchPage", "options", "url", "$fetch"]
+}
