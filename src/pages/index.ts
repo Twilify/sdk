@@ -24,8 +24,8 @@ export const fetchPage = <T extends PageContent = {}>(
   return $fetch<PageDocument<T>>(url, {
     method: 'GET',
     query: options,
-    Headers: {
-      Authorization: instance.apiKey,
+    headers: {
+      Authorization: instance.apiKey!,
     },
   });
 };
