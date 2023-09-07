@@ -1,4 +1,4 @@
-// this will be the entry file for Twilify SDK
-import { makePageEndpointUrl, fetchPage } from './pages';
+import { fetchPage } from './pages';
+import { makePageEndpointUrl } from './utils/url';
 
 export { makePageEndpointUrl, fetchPage };

@@ -1,5 +1,5 @@
 import { $fetch } from 'ofetch';
-import CONFIG from '../config';
+import { makePageEndpointUrl } from '../utils/url';
 
 interface Options {
   version?: 'production' | 'draft';
@@ -13,10 +13,6 @@ interface PageDocument<T extends PageContent = {}> {
   contentType: string;
   content: T;
 }
-
-export const makePageEndpointUrl = (slug: string) => {
-  return `${CONFIG.API_URL}/pages/${slug}`;
-};
 
 export const fetchPage = <T extends PageContent = {}>(
   slug: string,
