@@ -1,23 +1,16 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "baseUrl": "src",
-    "declaration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true,
-    "isolatedModules": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "noEmit": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true,
-    "outDir": "./lib",
-    "skipLibCheck": true,
-    "sourceMap": true,
     "strict": true,
-    "target": "ES6"
+    "module": "commonjs",
+    "target": "ESNext",
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "lib/types",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "lib"]
