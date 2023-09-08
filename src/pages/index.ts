@@ -1,6 +1,6 @@
 import { $fetch } from 'ofetch';
 import { makePageEndpointUrl } from '../utils/url';
-import { instance } from '../instance';
+import { getInstance } from '../instance';
 
 interface Options {
   version?: 'production' | 'draft';
@@ -25,7 +25,7 @@ export const fetchPage = <T extends PageContent = {}>(
     method: 'GET',
     query: options,
     headers: {
-      Authorization: instance.apiKey!,
+      Authorization: getInstance().options.apiKey,
     },
   });
 };

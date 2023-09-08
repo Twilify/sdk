@@ -1,5 +1,5 @@
 import { fetchPage } from './pages';
 import { makePageEndpointUrl } from './utils/url';
-import { login } from './instance';
+import { initializeTwilify } from './instance';
 
-export { makePageEndpointUrl, fetchPage, login };
+export { makePageEndpointUrl, fetchPage, initializeTwilify };
