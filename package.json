@@ -31,7 +31,8 @@
     "@types/node": "^20.5.1",
     "dotenv": "^16.3.1",
     "esbuild": "^0.19.2",
-    "typescript": "5.3.0-dev.20230820"
+    "typescript": "5.3.0-dev.20230820",
+    "vitest": "^0.34.3"
   },
   "dependencies": {
     "ofetch": ">=1.0.0"
