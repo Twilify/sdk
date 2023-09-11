@@ -7,7 +7,7 @@
   "scripts": {
     "test": "vitest",
     "build": "node vite.build.mjs && tsc",
-    "dev": "node vite.build.mjs --watch"
+    "dev": "cross-env NODE_ENV=development node vite.build.mjs --watch"
   },
   "exports": {
     ".": {
@@ -38,6 +38,7 @@
   "devDependencies": {
     "@types/eventsource": "^1.1.11",
     "@types/node": "^20.5.1",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "esbuild": "^0.19.2",
     "tsc-watch": "^6.0.4",

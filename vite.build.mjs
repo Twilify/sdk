@@ -1,6 +1,6 @@
 import { build } from 'vite';
 import { config } from 'dotenv';
-import { ChildProcess, exec, spawn } from 'child_process';
+import { exec } from 'child_process';
 
 config();
 

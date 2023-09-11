@@ -1,43 +1,32 @@
 import CONFIG from '../config';
 import { getInstance } from '../instance';
 
-// import { NativeEventSource, EventSourcePolyfill } from 'event-source-polyfill';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
 
+let allowListeners = false;
+
+window.addEventListener('message', function (event) {
+  if (
+    event.origin === 'https://twilify.app' ||
+    process.env.NODE_ENV === 'development'
+  ) {
+    if (event.data?.allowListeners != undefined) {
+      allowListeners = event.data.allowListeners;
+    }
+  }
+});
+
 const watchForPageChanges = (slug: string, onUpdate: (data: any) => void) => {
+  if (!allowListeners) return;
+
   fetchEventSource(`${CONFIG.API_URL}/content-editor/pages/changes`, {
     headers: {
       Authorization: getInstance().options.apiKey,
     },
     onmessage(ev) {
-      console.log(ev);
       onUpdate(JSON.parse(ev.data));
-      // onUpdate(JSON.parse(ev.data));
     },
   });
-
-  // const source = new EventSourcePolyfill(
-  //   `${CONFIG.API_URL}/content-editor/pages/changes`,
-  //   {
-  //     headers: {
-  //       Authorization: getInstance().options.apiKey,
-  //     },
-  //   }
-  // );
-
-  // console.log(source);
-
-  // source.addEventListener('message', (message) => {
-  //   console.log(message);
-  // });
-
-  // source.addEventListener('error', (err) => {
-  //   console.log(err);
-  // });
-
-  // source.addEventListener('open', (data) => {
-  //   console.log(data);
-  // });
 };
 
 export { watchForPageChanges };
