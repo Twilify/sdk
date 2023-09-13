@@ -16,6 +16,9 @@ build({
     },
     outDir: 'lib',
     watch: process.argv.includes('--watch'),
+    rollupOptions: {
+      external: ['ofetch', '@microsoft/fetch-event-source'],
+    },
   },
   define: {
     'process.env': process.env,
