@@ -6,9 +6,9 @@ interface Options {
   version?: 'production' | 'draft';
 }
 
-type PageContent = Record<string, number | string | object>;
+export type PageContent = Record<string, number | string | object>;
 
-interface PageDocument<T extends PageContent = {}> {
+export interface PageDocument<T extends PageContent = {}> {
   id: string;
   slug: string;
   contentType: string;
