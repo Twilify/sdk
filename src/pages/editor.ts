@@ -3,7 +3,7 @@ import { getInstance } from '../instance';
 
 import { fetchEventSource } from '@microsoft/fetch-event-source';
 
-let allowListeners = false;
+let allowListeners = process.env.NODE_ENV === 'development';
 
 window.addEventListener('message', function (event) {
   if (
