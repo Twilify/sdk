@@ -3,9 +3,11 @@ import { getInstance } from '../instance';
 
 import { fetchEventSource } from '@microsoft/fetch-event-source';
 
-let allowListeners = process.env.NODE_ENV === 'development';
+let allowListeners = false;
 
 window.addEventListener('message', function (event) {
+  console.log(process.env.NODE_ENV === 'development');
+
   if (
     event.origin === 'https://twilify.app' ||
     process.env.NODE_ENV === 'development'

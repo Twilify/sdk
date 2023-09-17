@@ -1,7 +1,7 @@
 const CONFIG = {
-  API_URL: 'https://api.twilify.app',
+  API_URL: process.env.API_URL || 'https://api.twilify.app',
   CDN_URL: 'https://cdn.twilify.app',
-  DEBUG: false,
+  DEBUG: process.env.NODE_ENV === 'development',
 };
 
 export default CONFIG;
