@@ -1,6 +1,6 @@
 {
   "name": "@twilify/sdk",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Twilify SDK.",
   "main": "./lib/index.js",
   "types": "./lib/types/index.d.ts",
