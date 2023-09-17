@@ -2,24 +2,10 @@ import CONFIG from '../config';
 import { getInstance } from '../instance';
 
 import { fetchEventSource } from '@microsoft/fetch-event-source';
-
-let allowListeners = false;
-
-window.addEventListener('message', function (event) {
-  console.log(process.env.NODE_ENV === 'development');
-
-  if (
-    event.origin === 'https://twilify.app' ||
-    process.env.NODE_ENV === 'development'
-  ) {
-    if (event.data?.allowListeners != undefined) {
-      allowListeners = event.data.allowListeners;
-    }
-  }
-});
+import { isEditorMode } from '../utils/isEditorMode';
 
 const watchForPageChanges = (slug: string, onUpdate: (data: any) => void) => {
-  if (!allowListeners) return;
+  if (!isEditorMode()) return;
 
   fetchEventSource(`${CONFIG.API_URL}/content-editor/pages/changes`, {
     headers: {
