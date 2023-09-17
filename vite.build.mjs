@@ -2,7 +2,9 @@ import { build } from 'vite';
 import { config } from 'dotenv';
 import { exec } from 'child_process';
 
-config();
+config({
+  path: process.env.NODE_ENV === 'development' ? '.env.development' : undefined,
+});
 
 build({
   configFile: false,

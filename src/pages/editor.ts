@@ -7,14 +7,17 @@ import { isEditorMode } from '../utils/isEditorMode';
 const watchForPageChanges = (slug: string, onUpdate: (data: any) => void) => {
   if (!isEditorMode()) return;
 
-  fetchEventSource(`${CONFIG.API_URL}/content-editor/pages/changes`, {
-    headers: {
-      Authorization: getInstance().options.apiKey,
-    },
-    onmessage(ev) {
-      onUpdate(JSON.parse(ev.data));
-    },
-  });
+  fetchEventSource(
+    `${CONFIG.API_URL}/content-editor/pages/changes?slug=${slug}`,
+    {
+      headers: {
+        Authorization: getInstance().options.apiKey,
+      },
+      onmessage(ev) {
+        onUpdate(JSON.parse(ev.data));
+      },
+    }
+  );
 };
 
 export { watchForPageChanges };
