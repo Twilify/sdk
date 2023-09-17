@@ -9,8 +9,6 @@ export const isEditorMode = () => {
       queryParams[key] = decodeURIComponent(value);
     });
 
-  console.log(queryParams);
-
   if (queryParams.twilifyEditorMode) {
     return true;
   }
