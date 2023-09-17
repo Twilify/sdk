@@ -10,6 +10,7 @@ const watchForPageChanges = (slug: string, onUpdate: (data: any) => void) => {
   fetchEventSource(
     `${CONFIG.API_URL}/content-editor/pages/changes?slug=${slug}`,
     {
+      mode: 'no-cors',
       headers: {
         Authorization: getInstance().options.apiKey,
       },
