@@ -11,6 +11,7 @@ const watchForPageChanges = (slug: string, onUpdate: (data: any) => void) => {
     `${CONFIG.API_URL}/content-editor/pages/changes?slug=${slug}`,
     {
       mode: 'no-cors',
+      credentials: 'include',
       headers: {
         Authorization: getInstance().options.apiKey,
       },
